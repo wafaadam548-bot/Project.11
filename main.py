@@ -10,6 +10,7 @@ while True:
 
         if differences == 0:
             print("🎉 Yaaaa!!!! You're the winner!")
+            break
         elif differences <= 5:
             print("🔥 You are close!")
         elif differences < 10:  
