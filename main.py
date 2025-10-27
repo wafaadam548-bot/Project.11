@@ -31,5 +31,4 @@ while True:
                 continue
             else:
                 print("👋 Thanks for playing! Goodbye!")
-                break
         
