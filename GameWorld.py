@@ -9,7 +9,7 @@ while True:
     if choise=="1":
         import XO
     elif choise=="2":
-        import main  
+        import Guess  
     else:
         print("Sorry, make sure you follow the steps and write with the same letters and spelling.")            
     print("Please Press Enter to Exit the page")
