@@ -2,7 +2,7 @@ board=["-","-","-",
         "-","-","-",
         "-","-","-"]
 
-cerrentplayer="x"
+cerrentplayer="X"
 winner="noun"        
 gamingRuning=True
 def printBoard(board):
@@ -39,7 +39,25 @@ def playerInput(board):
         elif board[2]==board[5]==board[8] and board[2]!="-":
             winner=board[2]
             return True
-                
+    def checkDiag(board):
+        global winner
+        if board[0]==board[4]==board[8] and board[0]!="-":
+            winner=board[0]
+            return True 
+        elif board[2]==board[4]==board[6] and board[2]!="-":
+            winner=board[2]
+            return True   
+    def checkTie(board):
+        global gamingRuning
+        if "-" not in board:
+            printBoard(board)
+            print("It is Tie! ")        
+            gamingRuning=False
+    def switchPlayer():
+        global cerrentplayer
+        if cerrentplayer=="X":
+            cerrentplayer="O"
+
 while gamingRuning:
     printBoard(board)
     playerInput(board)         
