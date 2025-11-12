@@ -1,87 +1,101 @@
 import random
-import colorama
-from colorama import Fore, Style
-colorama.init()
-board=[Fore.BLACK+"-","-","-",
-        "-","-","-",
-        "-","-","-"]
+from colorama import Fore, Style, init
+init(autoreset=True)
 
-cerrentplayer=Fore.GREEN+"X"
-winner="noun"        
-gamingRuning=True
-def printBoard(board):
-    print(board[0]+"|",board[1]+"|",board[2]+"|")
+board = ["-"] * 9
+current_player = "X"
+player_colors = {"X": Fore.GREEN, "O": Fore.LIGHTWHITE_EX}
+empty_color = Fore.WHITE
+winner = None
+game_running = True
+
+def printBoard():
+    def colored(cell):
+        if cell == "X":
+            return player_colors["X"] + "X" + Style.RESET_ALL
+        elif cell == "O":
+            return player_colors["O"] + "O" + Style.RESET_ALL
+        else:
+            return empty_color + "-" + Style.RESET_ALL
+    print(colored(board[0]) + "|" + colored(board[1]) + "|" + colored(board[2]))
     print("________")
-    print(board[3]+"|",board[4]+"|",board[5]+"|")
+    print(colored(board[3]) + "|" + colored(board[4]) + "|" + colored(board[5]))
     print("________")
-    print(board[6]+"|",board[7]+"|",board[8]+"|")
-def playerInput(board):
-    num= int (input(Fore.BLUE+"ENter a number between 1 to 9: "))
-    if num>=1 and num<=9 and board[num-1]=="-":
-        board[num-1]=cerrentplayer
+    print(colored(board[6]) + "|" + colored(board[7]) + "|" + colored(board[8]))
+
+def playerInput():
+    global board, current_player
+    try:
+        num = int(input(Fore.CYAN + "Enter a number between 1 and 9: "))
+    except ValueError:
+        print(Fore.LIGHTRED_EX + "Please enter a valid number.")
+        return
+    if 1 <= num <= 9 and board[num-1] == "-":
+        board[num-1] = current_player
     else:
-        print(Fore.LIGHTRED_EX+"Oops Player is already in that spot !")    
+        print(Fore.LIGHTRED_EX + "Oops! That spot is taken or invalid.")
 
-def checkHorezantal(board):
+def checkHorizontal():
     global winner
-    if board[0]==board[1]==board[2] and board[1]!="-":
-        winner=board[0]
-        return True
-    elif board[3]==board[4]==board[5] and board[2]!="-":
-        winner=board[3]
-        return True
-    elif board[6]==board[7]==board[8] and board[6]!="-":
-        winner=board[6]
-def checkRaw(board):
+    if board[0] == board[1] == board[2] and board[0] != "-":
+        winner = board[0]; return True
+    if board[3] == board[4] == board[5] and board[3] != "-":
+        winner = board[3]; return True
+    if board[6] == board[7] == board[8] and board[6] != "-":
+        winner = board[6]; return True
+    return False
+
+def checkVertical():
     global winner
-    if board[0]==board[3]==board[6] and board[0]!="-":
-        winner= board[0]
-        return True
-    elif board[1]==board[4]==board[7] and board[1]!="-":
-        winner=board[1]
-        return True
-    elif board[2]==board[5]==board[8] and board[2]!="-":
-        winner=board[2]
-        return True
-def checkDiag(board):
+    if board[0] == board[3] == board[6] and board[0] != "-":
+        winner = board[0]; return True
+    if board[1] == board[4] == board[7] and board[1] != "-":
+        winner = board[1]; return True
+    if board[2] == board[5] == board[8] and board[2] != "-":
+        winner = board[2]; return True
+    return False
+
+def checkDiagonal():
     global winner
-    if board[0]==board[4]==board[8] and board[0]!="-":
-        winner=board[0]
-        return True 
-    elif board[2]==board[4]==board[6] and board[2]!="-":
-        winner=board[2]
-        return True   
-def checkTie(board):
-    global gamingRuning
-    if "-" not in board:
-        printBoard(board)
-        print(Fore.LIGHTRED_EX+"It is Tie! ")        
-        gamingRuning=False
+    if board[0] == board[4] == board[8] and board[0] != "-":
+        winner = board[0]; return True
+    if board[2] == board[4] == board[6] and board[2] != "-":
+        winner = board[2]; return True
+    return False
+
+def checkTie():
+    global game_running
+    if "-" not in board and winner is None:
+        printBoard()
+        print(Fore.LIGHTRED_EX + "It is a tie!")
+        game_running = False
+
 def checkWin():
-    global gamingRuning
-    if checkHorezantal(board)or checkDiag(board) or checkRaw(board):
-        print(Fore.LIGHTYELLOW_EX +f"The winner is {winner}🎉🎉")     
-        gamingRuning=False   
+    global game_running
+    if checkHorizontal() or checkDiagonal() or checkVertical():
+        print(Fore.LIGHTYELLOW_EX + f"The winner is {winner} 🎉🎉")
+        game_running = False
+
 def switchPlayer():
-    global cerrentplayer
-    if cerrentplayer=="X":
-        cerrentplayer=Fore.LIGHTWHITE_EX+"O"
+    global current_player
+    current_player = "O" if current_player == "X" else "X"
+
+def computerMove():
+    empties = [i for i, v in enumerate(board) if v == "-"]
+    if not empties:
+        return
+    pos = random.choice(empties)
+    board[pos] = "O"
+
+while game_running:
+    printBoard()
+    if current_player == "X":
+        playerInput()
     else:
-        cerrentplayer="X"    
-def computer(board):
-    while cerrentplayer==Fore.LIGHTWHITE_EX+"O":
-        position=random.randint(0,8)
-        if board[position]=="-":
-            board[position]="O"
-            switchPlayer()
-
-
-while gamingRuning:
-    printBoard(board)
-    playerInput(board)         
+        computerMove()
     checkWin()
-    checkTie(board)
+    checkTie()
+    if not game_running:
+        break
     switchPlayer()
-    computer(board)
-    checkWin()
-    checkTie(board)
+printBoard()
