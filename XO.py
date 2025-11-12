@@ -1,9 +1,12 @@
 import random
-board=["-","-","-",
+import colorama
+from colorama import Fore, Style
+colorama.init()
+board=[Fore.BLACK+"-","-","-",
         "-","-","-",
         "-","-","-"]
 
-cerrentplayer="X"
+cerrentplayer=Fore.GREEN+"X"
 winner="noun"        
 gamingRuning=True
 def printBoard(board):
@@ -13,11 +16,11 @@ def printBoard(board):
     print("________")
     print(board[6]+"|",board[7]+"|",board[8]+"|")
 def playerInput(board):
-    num= int (input("ENter a number between 1 to 9: "))
+    num= int (input(Fore.BLUE+"ENter a number between 1 to 9: "))
     if num>=1 and num<=9 and board[num-1]=="-":
         board[num-1]=cerrentplayer
     else:
-        print("Oops Player is already in that spot !")    
+        print(Fore.LIGHTRED_EX+"Oops Player is already in that spot !")    
 
 def checkHorezantal(board):
     global winner
@@ -52,21 +55,21 @@ def checkTie(board):
     global gamingRuning
     if "-" not in board:
         printBoard(board)
-        print("It is Tie! ")        
+        print(Fore.LIGHTRED_EX+"It is Tie! ")        
         gamingRuning=False
 def checkWin():
     global gamingRuning
     if checkHorezantal(board)or checkDiag(board) or checkRaw(board):
-        print(f"The winner is {winner}🎉🎉")     
+        print(Fore.LIGHTYELLOW_EX +f"The winner is {winner}🎉🎉")     
         gamingRuning=False   
 def switchPlayer():
     global cerrentplayer
     if cerrentplayer=="X":
-        cerrentplayer="O"
+        cerrentplayer=Fore.LIGHTWHITE_EX+"O"
     else:
         cerrentplayer="X"    
 def computer(board):
-    while cerrentplayer=="O":
+    while cerrentplayer==Fore.LIGHTWHITE_EX+"O":
         position=random.randint(0,8)
         if board[position]=="-":
             board[position]="O"
