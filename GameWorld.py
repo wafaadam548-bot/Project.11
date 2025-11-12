@@ -7,10 +7,10 @@ while True:
     print(Fore.WHITE + Style.BRIGHT + "------------------------------------")
     print(Fore.YELLOW + Style.BRIGHT + "🎮 Welcome to the Games World!! 🎮")
     print(Fore.CYAN + "Please Choose What you want to Play")
-    print(Fore.BLACK + "1. X,O (TIC TAC TOE)")
-    print(Fore.BLACK + "2. Guess The Number")
+    print(Fore.YELLOW + "1. X,O (TIC TAC TOE)")
+    print(Fore.YELLOW + "2. Guess The Number")
 
-    choice = input(Fore.LIGHTWHITE_EX + "\nEnter Your Choice (1,2): ").strip()
+    choice =int( input(Fore.LIGHTWHITE_EX + "\nEnter Your Choice (1,2): ")).strip()
 
     if choice == "1":
         import XO
