@@ -1,21 +1,27 @@
-from colorama import Fore, Back,Style,init
-init(autoreset=True)
+import colorama
+from colorama import Fore, Style
+colorama.init()
+
 while True:
-    print("==================================="
-    "------------------------------------")
-    print("Welcome to the games worls!!")
-    print(" Please Choose What you want to Play")
-    print("1. X,O (TIC TAC TOE )")
-    print("2. Guess The number")
-    choise=input("Enter Your choise(1,2) : ")
-    if choise=="1":
+    print(Fore.WHITE + Style.BRIGHT + "===================================")
+    print(Fore.WHITE + Style.BRIGHT + "------------------------------------")
+    print(Fore.YELLOW + Style.BRIGHT + "🎮 Welcome to the Games World!! 🎮")
+    print(Fore.CYAN + "Please Choose What you want to Play")
+    print(Fore.BLACK + "1. X,O (TIC TAC TOE)")
+    print(Fore.BLACK + "2. Guess The Number")
+
+    choice = input(Fore.LIGHTWHITE_EX + "\nEnter Your Choice (1,2): ").strip()
+
+    if choice == "1":
         import XO
-    elif choise=="2":
+    elif choice == "2":
         import Guess  
     else:
-        print("Sorry, make sure you follow the steps and write with the same letters and spelling.")            
-    print("Please Press Enter to Exit the page")
-    again = input("Do you want to PLay again? (yes/no): ")
-    if again.lower() != "yes":
-        print("Thank you for Playing Game world!") 
+        print(Fore.RED + "❌ Sorry, make sure you write correctly.")
+
+    print(Fore.CYAN + "\nPlease Press Enter to Exit the page")
+    again = input(Fore.LIGHTMAGENTA_EX + "Do you want to play again? (yes/no): ").strip().lower()
+
+    if again != "yes":
+        print(Fore.BLACK + "💖 Thank you for playing Game World! 💖") 
         break
