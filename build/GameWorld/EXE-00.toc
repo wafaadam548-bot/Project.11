@@ -84,10 +84,12 @@
   ('_socket.pyd', 'C:\\Program Files\\Python\\DLLs\\_socket.pyd', 'EXTENSION'),
   ('_lzma.pyd', 'C:\\Program Files\\Python\\DLLs\\_lzma.pyd', 'EXTENSION'),
   ('_bz2.pyd', 'C:\\Program Files\\Python\\DLLs\\_bz2.pyd', 'EXTENSION'),
+  ('_ctypes.pyd', 'C:\\Program Files\\Python\\DLLs\\_ctypes.pyd', 'EXTENSION'),
   ('VCRUNTIME140.dll', 'C:\\Program Files\\Python\\VCRUNTIME140.dll', 'BINARY'),
   ('libcrypto-3.dll',
    'C:\\Program Files\\Python\\DLLs\\libcrypto-3.dll',
    'BINARY'),
+  ('libffi-8.dll', 'C:\\Program Files\\Python\\DLLs\\libffi-8.dll', 'BINARY'),
   ('base_library.zip',
    'C:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
    'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\build\\GameWorld\\base_library.zip',
@@ -95,7 +97,7 @@
  [],
  False,
  False,
- 1763047836,
+ 1763048208,
  [('run.exe',
    'C:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
    'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\.venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
