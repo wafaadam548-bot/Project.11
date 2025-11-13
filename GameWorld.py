@@ -10,12 +10,12 @@ while True:
     print(Fore.YELLOW + "1. X,O (TIC TAC TOE)")
     print(Fore.YELLOW + "2. Guess The Number")
 
-    choice =int( input(Fore.LIGHTWHITE_EX + "\nEnter Your Choice (1,2): ")).strip()
+    choice = input(Fore.LIGHTWHITE_EX + "\nEnter Your Choice (1,2): ").strip()
 
     if choice == "1":
         import XO
     elif choice == "2":
-        import Guess  
+        import Guess
     else:
         print(Fore.RED + "❌ Sorry, make sure you write correctly.")
 
@@ -24,4 +24,5 @@ while True:
 
     if again != "yes":
         print(Fore.BLACK + "💖 Thank you for playing Game World! 💖") 
+        input("Press Enter to exit...")
         break
