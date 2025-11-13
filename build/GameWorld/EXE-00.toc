@@ -1,10 +1,10 @@
 ('C:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
  'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\dist\\GameWorld.exe',
+ True,
  False,
  False,
- False,
- 'c:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
- 'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\.venv\\Lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-windowed.ico',
+ 'C:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
+ 'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\.venv\\Lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-console.ico',
  None,
  False,
  False,
@@ -59,7 +59,7 @@
    'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\build\\GameWorld\\localpycs\\pyimod04_pywin32.pyc',
    'PYMODULE'),
   ('pyiboot01_bootstrap',
-   'c:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
+   'C:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
    'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\.venv\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
    'PYSOURCE'),
   ('pyi_rth_inspect',
@@ -84,12 +84,10 @@
   ('_socket.pyd', 'C:\\Program Files\\Python\\DLLs\\_socket.pyd', 'EXTENSION'),
   ('_lzma.pyd', 'C:\\Program Files\\Python\\DLLs\\_lzma.pyd', 'EXTENSION'),
   ('_bz2.pyd', 'C:\\Program Files\\Python\\DLLs\\_bz2.pyd', 'EXTENSION'),
-  ('_ctypes.pyd', 'C:\\Program Files\\Python\\DLLs\\_ctypes.pyd', 'EXTENSION'),
   ('VCRUNTIME140.dll', 'C:\\Program Files\\Python\\VCRUNTIME140.dll', 'BINARY'),
   ('libcrypto-3.dll',
    'C:\\Program Files\\Python\\DLLs\\libcrypto-3.dll',
    'BINARY'),
-  ('libffi-8.dll', 'C:\\Program Files\\Python\\DLLs\\libffi-8.dll', 'BINARY'),
   ('base_library.zip',
    'C:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
    'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\build\\GameWorld\\base_library.zip',
@@ -97,9 +95,9 @@
  [],
  False,
  False,
- 1763046799,
- [('runw.exe',
-   'c:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
-   'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\.venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',
+ 1763047836,
+ [('run.exe',
+   'C:\\Users\\adamw7854\\OneDrive - Waterloo Region District School '
+   'Board\\Desktop\\Day4InClassPractice4_Wafa_Adam\\Project.11\\.venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
    'EXECUTABLE')],
  'C:\\Program Files\\Python\\python313.dll')
