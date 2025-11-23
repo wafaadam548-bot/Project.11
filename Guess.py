@@ -1,35 +1,43 @@
 import random
 import colorama
 from colorama import Fore, Style
-colorama.init()
-print(Fore.BLACK+"Hellooo in Guess the Number Game!")
+colorama.init(autoreset=True)
+
+print("\n" + Fore.YELLOW + "🎉 Welcome to Guess The Number Game!")
+print(Fore.GREEN  + "Try to guess the secret number!")
+print("-" * 50 + "\n")
+
 while True:
     num = random.randint(1, 10)
-    while True:
-        num1 = int(input(Fore.CYAN +"Enter a number between 1 and 10: "))
 
+    while True:
+        user_input = input(Fore.CYAN + "\n👉 Enter a number between 1 and 10: ")
+
+        if not user_input.isdigit():
+            print(Fore.RED + "❌ Please enter numbers only!")
+            continue
+
+        num1 = int(user_input)
         differences = abs(num - num1)
 
+        print()
+
         if differences == 0:
-            print(Fore.LIGHTYELLOW_EX+"🎉 Yaaaa!!!! You're the winner!")
+            print(Fore.LIGHTYELLOW_EX + "🎉 Yaaaa!!!! You're the winner!")
+            print("-" * 50)
             break 
 
-        elif differences <= 5:
-            print(Fore.LIGHTRED_EX+"🔥 You are close!")
-        elif differences < 10:  
-            print(Fore.LIGHTBLUE_EX+"😐 So far, think again!") 
+        elif differences <= 2:
+            print(Fore.LIGHTRED_EX + "🔥 Very close!")
+        elif differences <= 5:  
+            print(Fore.LIGHTBLUE_EX + "🙂 Close!")
         else:
-            print(Fore.LIGHTWHITE_EX+"❄️ You are very far, think again!")   
-            
+            print(Fore.WHITE + "❄️ Far, try again!")   
 
-    if num==num1:        
-        response = input(Fore.BLACK+"Do you want to start again? (yes or no): ") 
-        if response.lower() == "yes" :
-            continue
-        else:
-            print(Fore.MAGENTA+"👋 Thanks for playing! Goodbye!")
-            break 
+    print("\n" + "-" * 50)
+    response = input(Fore.MAGENTA + "🔁 Do you want to play again? (yes/no): ")
 
-            
-                
-        
+    if response.lower() != "yes":
+        print("\n" + Fore.GREEN + "👋 Thanks for playing! Goodbye!")
+        print("-" * 50)
+        break
