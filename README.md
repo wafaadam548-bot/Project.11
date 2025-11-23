@@ -72,8 +72,8 @@ Your EXE will appear in the **dist** folder.
 ## 🎥 Video Demo
 
 Here is the gameplay recording:
-*(video included in project folder)*
-
+*([(https://hc-cdn.hel1.your-objectstorage.com/s/v3/b30fb7927ee0a4275cf8f4fc2a86ea5589f90496_screen_recording_2025-11-23_6.23.13_am.webm))*
+]
 ---
 
 ## 📄 Project Structure
